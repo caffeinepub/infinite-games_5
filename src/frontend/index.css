@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+    /* Light mode - clean light with neon accents */
+    --background: 0.97 0.005 270;
+    --foreground: 0.12 0.02 270;
+    --card: 0.99 0.003 270;
+    --card-foreground: 0.12 0.02 270;
+    --popover: 0.99 0.003 270;
+    --popover-foreground: 0.12 0.02 270;
+    --primary: 0.65 0.22 285;
+    --primary-foreground: 0.99 0 0;
+    --secondary: 0.94 0.01 270;
+    --secondary-foreground: 0.2 0.03 270;
+    --muted: 0.94 0.01 270;
+    --muted-foreground: 0.45 0.02 270;
+    --accent: 0.7 0.19 205;
+    --accent-foreground: 0.99 0 0;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.88 0.02 270;
+    --input: 0.88 0.02 270;
+    --ring: 0.65 0.22 285;
+    --chart-1: 0.65 0.22 285;
+    --chart-2: 0.7 0.19 205;
+    --chart-3: 0.55 0.18 300;
+    --chart-4: 0.75 0.15 250;
+    --chart-5: 0.6 0.2 220;
+    --sidebar: 0.94 0.01 270;
+    --sidebar-foreground: 0.12 0.02 270;
+    --sidebar-primary: 0.65 0.22 285;
+    --sidebar-primary-foreground: 0.99 0 0;
+    --sidebar-accent: 0.88 0.02 270;
+    --sidebar-accent-foreground: 0.2 0.03 270;
+    --sidebar-border: 0.88 0.02 270;
+    --sidebar-ring: 0.65 0.22 285;
+
+    /* Neon colors */
+    --neon-blue: 0.78 0.18 205;
+    --neon-purple: 0.65 0.22 285;
+    --neon-glow-blue: #00d4ff;
+    --neon-glow-purple: #a855f7;
+  }
+
+  .dark {
+    --background: 0.08 0.012 270;
+    --foreground: 0.95 0.01 270;
+    --card: 0.11 0.018 270;
+    --card-foreground: 0.95 0.01 270;
+    --popover: 0.13 0.02 270;
+    --popover-foreground: 0.95 0.01 270;
+    --primary: 0.72 0.22 285;
+    --primary-foreground: 0.08 0.012 270;
+    --secondary: 0.16 0.025 270;
+    --secondary-foreground: 0.95 0.01 270;
+    --muted: 0.16 0.025 270;
+    --muted-foreground: 0.58 0.04 270;
+    --accent: 0.75 0.2 205;
+    --accent-foreground: 0.08 0.012 270;
+    --destructive: 0.65 0.22 27;
+    --destructive-foreground: 0.95 0.01 270;
+    --border: 0.22 0.03 270;
+    --input: 0.18 0.025 270;
+    --ring: 0.72 0.22 285;
+    --chart-1: 0.72 0.22 285;
+    --chart-2: 0.75 0.2 205;
+    --chart-3: 0.6 0.2 300;
+    --chart-4: 0.78 0.17 250;
+    --chart-5: 0.65 0.22 220;
+    --sidebar: 0.11 0.018 270;
+    --sidebar-foreground: 0.95 0.01 270;
+    --sidebar-primary: 0.72 0.22 285;
+    --sidebar-primary-foreground: 0.08 0.012 270;
+    --sidebar-accent: 0.16 0.025 270;
+    --sidebar-accent-foreground: 0.95 0.01 270;
+    --sidebar-border: 0.22 0.03 270;
+    --sidebar-ring: 0.72 0.22 285;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Rajdhani', sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Orbitron', monospace;
+  }
+  .font-mono-game {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .neon-text-blue {
+    color: var(--neon-glow-blue);
+    text-shadow: 0 0 10px var(--neon-glow-blue), 0 0 30px var(--neon-glow-blue), 0 0 60px rgba(0,212,255,0.4);
+  }
+  .neon-text-purple {
+    color: var(--neon-glow-purple);
+    text-shadow: 0 0 10px var(--neon-glow-purple), 0 0 30px var(--neon-glow-purple), 0 0 60px rgba(168,85,247,0.4);
+  }
+  .neon-border-blue {
+    border-color: var(--neon-glow-blue);
+    box-shadow: 0 0 8px rgba(0,212,255,0.4), inset 0 0 8px rgba(0,212,255,0.1);
+  }
+  .neon-border-purple {
+    border-color: var(--neon-glow-purple);
+    box-shadow: 0 0 8px rgba(168,85,247,0.4), inset 0 0 8px rgba(168,85,247,0.1);
+  }
+  .neon-glow-blue {
+    box-shadow: 0 0 20px rgba(0,212,255,0.5), 0 0 60px rgba(0,212,255,0.2);
+  }
+  .neon-glow-purple {
+    box-shadow: 0 0 20px rgba(168,85,247,0.5), 0 0 60px rgba(168,85,247,0.2);
+  }
+  .gradient-text {
+    background: linear-gradient(135deg, #00d4ff, #a855f7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .game-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .game-card:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 0 25px rgba(168,85,247,0.5), 0 0 50px rgba(0,212,255,0.2);
+  }
+  .scrollbar-neon::-webkit-scrollbar {
+    height: 4px;
+  }
+  .scrollbar-neon::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-neon::-webkit-scrollbar-thumb {
+    background: linear-gradient(90deg, #00d4ff, #a855f7);
+    border-radius: 2px;
+  }
+  .glass {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  .skeleton-pulse {
+    animation: skeleton-shimmer 1.8s ease-in-out infinite;
+    background: linear-gradient(90deg, oklch(var(--muted)) 25%, oklch(var(--secondary)) 50%, oklch(var(--muted)) 75%);
+    background-size: 200% 100%;
+  }
+  @keyframes skeleton-shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+}
